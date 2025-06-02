@@ -18,7 +18,7 @@ public class FAQController {
 	@Autowired
 	private FAQService faqService;
 
-	@RequestMapping("/usr/article/list")
+	@RequestMapping("/usr/FAQ/list")
 	public String list(Model model, @RequestParam(defaultValue = "") String searchKeyword) {
 		List<FAQ> FAQ = null;
 		if (searchKeyword.isEmpty()) {
@@ -29,7 +29,7 @@ public class FAQController {
 
 		model.addAttribute("FAQ", FAQ);
 
-		return "/usr/article/list";
+		return "/usr/FAQ/list";
 	}
 
 }
