@@ -27,13 +27,18 @@
 				<div
 					class="group border-2 border-blue-500 rounded-xl bg-white shadow-lg hover:bg-blue-50 transition">
 					<button
-						class="faq-question w-full text-left px-6 py-4 text-xl font-semibold text-blue-800 group-hover:text-blue-900"
-						onclick="toggleFaq(this)">${faq.id}. Q. ${faq.title }</button>
+						class="faq-question w-full text-left px-6 py-4 text-xl font-semibold text-blue-800 group-hover:text-blue-900">${faq.id}.
+						Q. ${faq.title }</button>
 
 					<div class="faq-answer hidden  px-6 pb-6 text-lg text-gray-700">A.
 						${faq.body }</div>
 				</div>
-			</c:forEach></div>
+			</c:forEach> <c:if test="${empty FAQ }">
+
+
+				<div
+					class=" w-full text-left px-6 py-4 text-xl font-semibold text-blue-800 group-hover:text-blue-900">검색된 FAQ가 없습니다.</div>
+			</c:if></div>
 
 	</div>
 
@@ -44,7 +49,6 @@
 
 				// 현재 항목 토글
 				$answer.slideToggle(200);
-				$icon.text($answer.is(':visible') ? '+' : '×'); // × 는 열려있는 상태로 표시
 			});
 		});
 	</script>
